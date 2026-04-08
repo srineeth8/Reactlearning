@@ -1,13 +1,7 @@
-import { useContext } from "react";
-import { CountContext } from "./context/countctx";
-
-const Footer = () => {
-  const { count } = useContext(CountContext);
-
+const Footer = ({ text }) => {
   return (
-    <div>
-      <h2>Footer</h2>
-      <h3>Count: {count}</h3>
+    <div style={{ background: "lightgray", padding: "10px", marginTop: "20px" }}>
+      <h4>{text}</h4>
     </div>
   );
 };

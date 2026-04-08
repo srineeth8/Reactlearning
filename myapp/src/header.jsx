@@ -1,15 +1,7 @@
-import { useContext } from "react";
-import { CountContext } from "./context/countctx";
-
-const Header = () => {
-  const { count, setCount } = useContext(CountContext);
-
+const Header = ({ title }) => {
   return (
-    <div>
-      <h2>Header</h2>
-      <button onClick={() => setCount(count + 1)}>
-        Increase Count
-      </button>
+    <div style={{ background: "lightblue", padding: "10px" }}>
+      <h2>{title}</h2>
     </div>
   );
 };
