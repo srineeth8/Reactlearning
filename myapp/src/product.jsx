@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
 import Header from "./header";
 import Footer from "./footer";
+import { useNavigate } from "react-router-dom";
 
 const Products = () => {
   const [data, setData] = useState([]);
   const [count, setCount] = useState(0);
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetch("https://dummyjson.com/products")
@@ -30,10 +32,13 @@ const Products = () => {
           {data.map((item) => (
             <div
               key={item.id}
+              onClick={() => navigate(`/details/${item.id}`)}
               style={{
                 border: "1px solid black",
                 padding: "10px",
-                width: "200px"
+                width: "200px",
+                cursor: "pointer",
+                transition: "transform 0.3s",
               }}
             >
               <h4>{item.title}</h4>
